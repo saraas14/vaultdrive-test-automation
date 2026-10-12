@@ -1,0 +1,26 @@
+{
+  "name": "vaultdrive-test-automation",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Framework de automatización de pruebas Web, API y rendimiento para VaultDrive (DSF-705)",
+  "engines": { "node": ">=22" },
+  "type": "module",
+  "scripts": {
+    "test:api": "playwright test --project=api",
+    "test:web": "playwright test --project=chromium --project=firefox",
+    "test:web:headed": "playwright test --project=chromium --headed",
+    "test:smoke": "playwright test --grep @smoke",
+    "report": "playwright show-report reports/html",
+    "test:perf": "k6 run --summary-export=reports/perf-01-resumen.json performance/scenarios/perf-01-dashboard.js",
+    "test:perf:smoke": "k6 run -e PROFILE=smoke performance/scenarios/perf-01-dashboard.js",
+    "seed:perf": "node scripts/seed-perf-users.mjs",
+    "test:all": "npm run test:api && npm run test:web",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.56.0",
+    "@types/node": "^22.0.0",
+    "dotenv": "^16.4.5",
+    "typescript": "^5.6.0"
+  }
+}

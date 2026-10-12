@@ -1,0 +1,12 @@
+node_modules/
+.env
+config/environments.json
+performance/data/users.json
+reports/**
+!reports/.gitkeep
+test-results/
+playwright-report/
+blob-report/
+.auth/
+*.log
+.DS_Store

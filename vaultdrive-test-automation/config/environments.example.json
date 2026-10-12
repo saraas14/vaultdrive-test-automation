@@ -1,0 +1,42 @@
+{
+  "_comment": "Archivo de configuración de ejemplo (sin secretos). Copiar como environments.json y ajustar. Las contraseñas se leen siempre desde variables de entorno (.env).",
+  "default": "local",
+  "environments": {
+    "local": {
+      "webBaseUrl": "http://localhost:5173",
+      "apiBaseUrl": "http://localhost:5213/api",
+      "swaggerUrl": "http://localhost:5213/swagger",
+      "mongo": {
+        "connectionString": "mongodb://localhost:27017",
+        "database": "VaultDrive_QA"
+      }
+    },
+    "ci": {
+      "webBaseUrl": "http://localhost:5173",
+      "apiBaseUrl": "http://localhost:5213/api",
+      "swaggerUrl": "http://localhost:5213/swagger",
+      "mongo": {
+        "connectionString": "mongodb://mongo:27017",
+        "database": "VaultDrive_QA"
+      }
+    }
+  },
+  "timeouts": {
+    "testMs": 30000,
+    "expectMs": 5000,
+    "navigationMs": 15000
+  },
+  "testData": {
+    "emailDomain": "vaultdrive.test",
+    "emailPrefix": "qa",
+    "sampleFile": "shared/test-files/documento-prueba.txt"
+  },
+  "performance": {
+    "virtualUsers": 50,
+    "thresholds": {
+      "p95Ms": 800,
+      "p99Ms": 1500,
+      "errorRate": 0.01
+    }
+  }
+}

@@ -1,0 +1,2 @@
+Archivo de prueba controlado para VaultDrive (DSF-705).
+Contenido fijo de tamaño conocido; no modificar porque las pruebas validan su nombre y tamaño.
